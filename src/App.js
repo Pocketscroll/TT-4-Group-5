@@ -14,22 +14,19 @@ function App() {
 	return (
 		<div className="main-container">
 			<Router>
+				<Navbar />
 				<Route exact path="/">
-					<Navbar />
 					<Home />
 				</Route>
 
-				<Route exact path="/login">
-					<Navbar />
+				<Route path="/login">
 					<Login />
 				</Route>
 
 				<Route exact path="/dashboard">
-					<Navbar />
 					<Dashboard />
 				</Route>
 				<Route exact path="/history">
-					<Navbar />
 					<TransactionHistory />
 				</Route>
 				<Footer />

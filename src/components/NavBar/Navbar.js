@@ -9,7 +9,6 @@ export const Navbar = () => {
 	}
 	console.log(location);
 	return (
-		<Router>
 			<div id="nav">
 				<li className="nav-link-logo">
 					<Link
@@ -89,6 +88,6 @@ export const Navbar = () => {
 					)}
 				</ul>
 			</div>
-		</Router>
+
 	);
 };
