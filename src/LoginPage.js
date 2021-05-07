@@ -11,7 +11,7 @@ class LoginPage extends React.Component {
     constructor() {
         super();
         this.state = {
-            username: "",
+            userName: "",
             password: "",
         }
 
@@ -99,14 +99,6 @@ class LoginPage extends React.Component {
                         </p>{" "}
                     </div>
                 </form>
-
-                <p>{this.state.username}</p>
-                <p>{this.state.password}</p>
-
-                <button onClick={this.mockLogin}>Mock Login</button>
-
-                <p to="/about">About</p>
-
             </div>
     )
        
