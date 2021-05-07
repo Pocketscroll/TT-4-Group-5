@@ -5,6 +5,7 @@ import Home from "./pages/Home"
 import Footer from "./Footer";
 import { Navbar } from "./components/NavBar/Navbar";
 import ViewBalance from "./ViewBalance";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
 	return (
@@ -12,6 +13,7 @@ function App() {
 		<Router>
 			<Navbar/>
 			<Route path="/ViewBalance" component={ViewBalance} />
+			<Route path="/Dashboard" component={Dashboard} />
 			< Home/>
 			<Footer/>			
 		</Router>
