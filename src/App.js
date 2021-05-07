@@ -1,10 +1,8 @@
 import "./App.css";
 import React from 'react'
 import { Route, BrowserRouter as Router} from "react-router-dom";
-import Home from "./Home"
-import { Navbar } from "./Navbar";
+import Home from "./pages/Home"
 import Footer from "./Footer";
-
 import { Navbar } from "./components/NavBar/Navbar";
 
 function App() {
