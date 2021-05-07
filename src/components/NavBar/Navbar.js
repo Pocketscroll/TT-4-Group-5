@@ -2,14 +2,18 @@ import React from "react";
 import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
-export const Navbar = () => {
+import { connect } from 'react-redux'
+
+function Navbar({loggedIn}) {
 	const location = useLocation();
 	if (location.state === undefined) {
 		location.state = {};
 	}
-	console.log(location);
+	console.log("logged IN: ", loggedIn);
 	return (
 			<div id="nav">
+
+
 				<li className="nav-link-logo">
 					<Link
 						className="navigation-link"
@@ -24,43 +28,54 @@ export const Navbar = () => {
 					</Link>
 				</li>
 
-				<ul className="nav-bars">
-					<li className="nav-link">
-						<Link
-							className="navigation-link"
-							to={{ pathname: "/dashboard", state: { ...location.state } }}
-						>
-							Dashboard
-						</Link>
-					</li>
-					<li className="nav-link">
-						<Link
-							className="navigation-link"
-							to={{ pathname: "/account", state: { ...location.state } }}
-						>
-							My Account
-						</Link>
-					</li>
-					<li className="nav-link">
-						<Link
-							className="navigation-link"
-							to={{ pathname: "/transfer", state: { ...location.state } }}
-						>
-							Make a Transfer
-						</Link>
-					</li>
 
-					<li className="nav-link">
-						<Link
-							className="navigation-link"
-							to={{
-								pathname: "/history",
-								state: { ...location.state },
-							}}
-						>
-							Transaction History
-						</Link>
-					</li>
+				
+
+				<ul className="nav-bars">
+
+					{loggedIn? 
+					<div>
+						<li className="nav-link">
+							<Link
+								className="navigation-link"
+								to={{ pathname: "/dashboard", state: { ...location.state } }}
+							>
+								Dashboard
+							</Link>
+						</li>
+						<li className="nav-link">
+							<Link
+								className="navigation-link"
+								to={{ pathname: "/account", state: { ...location.state } }}
+							>
+								My Account
+							</Link>
+						</li>
+						<li className="nav-link">
+							<Link
+								className="navigation-link"
+								to={{ pathname: "/transfer", state: { ...location.state } }}
+							>
+								Make a Transfer
+							</Link>
+						</li>
+
+						<li className="nav-link">
+							<Link
+								className="navigation-link"
+								to={{
+									pathname: "/history",
+									state: { ...location.state },
+								}}
+							>
+								Transaction History
+							</Link>
+						</li>
+					
+					</div> : null }
+
+
+
 					{Object.keys(location.state).length === 0 ? (
 						<li className="nav-link">
 							<Link
@@ -91,3 +106,10 @@ export const Navbar = () => {
 
 	);
 };
+
+
+function mapStateToProps(state) {
+	return { loggedIn: state.loggedIn };
+  } 
+
+  export default connect(mapStateToProps)(Navbar);

@@ -3,7 +3,7 @@ import './Login.css';
 import { withRouter } from "react-router";
 
 
-import { updateUserDetails } from '../actions';
+import { updateUserDetails , logIn} from '../actions';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 
@@ -64,6 +64,7 @@ class Login extends React.Component {
 
             this.props.updateUserDetails(content)
 
+            this.props.logIn(true)
 
             this.props.history.push({
                 pathname: '/dashboard',
@@ -133,12 +134,14 @@ class Login extends React.Component {
 const mapStateToProps = state => {
     return {
       userDetails: state.userDetails,
+      loggedIn: state.loggedIn,
     }
   }
   
   const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-        updateUserDetails: updateUserDetails
+        updateUserDetails: updateUserDetails,
+        logIn: logIn
     }, dispatch)
   }
   export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login));
