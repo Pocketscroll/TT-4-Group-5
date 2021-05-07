@@ -1,5 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import "./App.css";
+import React from 'react'
+import { Route, BrowserRouter as Router} from "react-router-dom";
+import Home from "./pages/Home"
+import Footer from "./Footer";
 import { Navbar } from "./components/NavBar/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
