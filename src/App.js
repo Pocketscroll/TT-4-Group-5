@@ -1,10 +1,19 @@
 import "./App.css";
+import React from 'react'
+import { Route, BrowserRouter as Router} from "react-router-dom";
+import Home from "./Home"
+import { Navbar } from "./Navbar";
+
 
 function App() {
 	return (
-		<>
-			<h1>E-Wallet!</h1>
-		</>
+		<div className='main-container'>
+		<Router>
+			<Navbar/>
+			< Home/>			
+		</Router>
+		
+		</div>
 	);
 }
 
