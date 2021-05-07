@@ -1,7 +1,7 @@
 import { Card } from "antd";
 import React from "react";
 
-function Balance() {
+function Balance(props) {
 	return (
 		<Card style={{ width: 300 }}>
 			<h5>Account Balance:</h5>
