@@ -1,0 +1,175 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+.Login-Form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: flex-start;
+    margin: 70px auto;
+}
+
+.Title {
+    font-family: Cabin;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 150%;
+    color: black;
+    align-self: center;
+}
+
+.Rectangle-58 {
+    height: 2px;
+    width: 100%;
+    background: #222222;
+}
+
+.Email-Title {
+    font-family: Cabin;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: black;
+    margin-top: 40px;
+}
+
+.Password-Title {
+    font-family: Cabin;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: black;
+}
+
+.Login-Button {
+    background: #1A9B89;
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #FFFFFF;
+    height: 40px;
+    width: 100%;
+    border-style: none;
+    margin-top: 20px;
+}
+
+.Login-Button-Speicifc:hover {
+    background: rgb(31, 173, 154);
+}
+
+.Login-Button-Speicifc:active {
+    background: rgb(38, 204, 182);
+}
+
+.Forgot-Password-Title {
+    font-family: Cabin;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    text-decoration-line: underline;
+    color: #0E5659;
+    align-self: flex-end;
+    margin-top: 20px;
+}
+
+#Email {
+    border-style: none;
+    box-shadow: none;
+    outline: none;
+    border-radius: 8px;
+    width: 70%;
+}
+
+.Email-Flex {
+    display: flex;
+    flex-direction: row;
+    background: #FFFFFF;
+    border: 1px solid #21283B;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 100%;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.NTU-Email {
+    margin-right: 10px;
+}
+
+#Password {
+    background: #FFFFFF;
+    border: 1px solid #21283B;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 40px;
+    width: 100%;
+}
+
+#Password {
+    background: #999,
+}
+
+input:focus {
+    border-style: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.Redirect {
+    align-self: center;
+    font-family: Cabin;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: center;
+    color: black;
+    margin-top: 20px;
+}
+
+.Redirect2 {
+    text-decoration-line: underline;
+    color: #0E5659;
+}
+
+#feedback,
+#nofeedback {
+    font-family: 'Oswald', Cabin, sans-serif;
+    font-size: 14px;
+    color: rgb(73, 72, 72);
+}
+
+#nofeedback {
+    /* background-image: url('../assets/Hint.png'); */
+    background-repeat: no-repeat;
+    background-position: 2px 5px;
+    padding-left: 22px;
+    padding-top: 1.5px;
+}
+
+#feedback {
+    /* background-image: url('../assets/Warning.png'); */
+    background-repeat: no-repeat;
+    background-position: 2px 5px;
+    padding-left: 22px;
+    padding-top: 1.5px;
+
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .Login-Form {
+
+        width: 90%;
+
+    }
+}
