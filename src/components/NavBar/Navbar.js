@@ -82,7 +82,7 @@ export const Navbar = () => {
 									state: {},
 								}}
 							>
-								Logout [{location.state.name}]
+								Logout
 							</Link>
 						</li>
 					)}
