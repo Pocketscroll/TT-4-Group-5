@@ -6,6 +6,7 @@ import { Route, BrowserRouter as Router} from "react-router-dom";
 import Home from "./pages/Home"
 import Footer from "./Footer";
 import { Navbar } from "./components/NavBar/Navbar";
+import Footer from "./Footer";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -33,6 +34,7 @@ function App() {
 					<Navbar />
 					<TransactionHistory />
 				</Route>
+				<Footer />
 			</Router>
 		</div>
 	);
