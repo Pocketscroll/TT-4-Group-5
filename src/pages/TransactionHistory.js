@@ -1,11 +1,36 @@
 import { Button, Card, Col, DatePicker, Row, Space, Table } from "antd";
 import React from "react";
+import moment from 'moment';
 import "./TransactionHistory.css";
 import { tmpDataBase } from "../transactionPlaceHolderData.js";
 
-const userInfo = tmpDataBase[0];
-
+var userInfo = tmpDataBase[0];
+var startDate = null;
+var endDate = null;
+var transactionInfo = userInfo.transactions;
 const { RangePicker } = DatePicker;
+
+
+function onChange(dates, dateStrings) {
+	startDate = dates[0];
+	endDate = dates[1];
+}
+
+function OnSearch()
+{
+	var newInfo = null;
+	
+	for (var i = 0; i < transactionInfo.length; ++i)
+	{
+		if (new Date(transactionInfo[i].date) > startDate && new Date(transactionInfo[i].date) < endDate)
+		{
+			newInfo.push(transactionInfo[i]);
+		}
+
+	}
+	if (newInfo != null)
+		transactionInfo = newInfo;
+}
 
 function TransactionHistory() {
 	const columns = [
@@ -38,21 +63,6 @@ function TransactionHistory() {
 			key: "message",
 		}
 	];
-
-	const data = [
-		{
-			date: "12/04/2021",
-			amount: "S$50",
-			status: "Received",
-			refid: "001",
-		},
-		{
-			date: "12/04/2021",
-			amount: "S$50",
-			status: "Received",
-			refid: "001",
-		}
-	];
 	return (
 		<div>
 			<Space>
@@ -64,10 +74,18 @@ function TransactionHistory() {
 							</Card>
 						</Col>
 					</Row>
-					Date Range:
-					<RangePicker />
-					<Button type="primary">Search</Button>
-					<Table columns={columns} dataSource={userInfo.transactions.slice().sort((a, b) => b.date - a.date)} />
+					
+					<RangePicker
+						ranges={{
+							'This Month': [moment().startOf('month'), moment().endOf('month')],
+						}}
+						showTime
+						format="YYYY/MM/DD"
+						onChange={onChange}
+					/>
+
+					<Button type="primary" onClick={OnSearch}>Search</Button>
+					<Table columns={columns} dataSource={transactionInfo} />
 				</div>
 			</Space>
 		</div>
