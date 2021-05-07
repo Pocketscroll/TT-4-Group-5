@@ -109,15 +109,30 @@ class Dashboard extends React.Component {
                                             </div>
                                         </div>
                                                
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <label>Age</label>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <p>{userData.age}</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <label>Gender</label>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <p>{userData.gender}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>           
                 </div>
-
             </div>
-
         )
     }
 }
