@@ -1,1 +1,8 @@
 @import "~antd/dist/antd.css";
+
+.spaced-layout {
+	padding: 2rem;
+	margin-bottom: 2rem;
+	margin-left: 2rem;
+	margin-right: 2rem;
+}

@@ -1,11 +1,15 @@
-import { Button, DatePicker, Table } from "antd";
-import React from "react";
-import Balance from "../components/Balance/Balance";
+import { Button, Col, DatePicker, Row, Space, Table } from "antd";
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import { bindActionCreators } from "redux";
+import { updateUserDetails } from "../actions";
+import AccountName from "../components/TransactionHistoryCards/AccountName";
+import Balance from "../components/TransactionHistoryCards/Balance";
 import "./TransactionHistory.css";
 
 const { RangePicker } = DatePicker;
 
-function TransactionHistory() {
+function TransactionHistory(props) {
 	const columns = [
 		{
 			title: "Date",
@@ -36,21 +40,79 @@ function TransactionHistory() {
 			status: "Received",
 			refid: "001",
 		},
+		{
+			date: "12/04/2021",
+			amount: "S$50",
+			status: "Received",
+			refid: "001",
+		},
+		{
+			date: "12/04/2021",
+			amount: "S$50",
+			status: "Received",
+			refid: "001",
+		},
+		{
+			date: "12/04/2021",
+			amount: "S$50",
+			status: "Received",
+			refid: "001",
+		},
+		{
+			date: "12/04/2021",
+			amount: "S$50",
+			status: "Received",
+			refid: "001",
+		},
+		{
+			date: "12/04/2021",
+			amount: "S$50",
+			status: "Received",
+			refid: "001",
+		},
 	];
 
 	function onChange(date, dateString) {
 		console.log(date, dateString);
+		console.log("custID:", this.props.userDetails.custID);
 	}
 
 	return (
-		<div>
-			<Balance />
-			Date:
-			<DatePicker onChange={onChange} />
-			<Button type="primary">Search</Button>
-			<Table columns={columns} dataSource={data} />
-		</div>
+		<>
+			<Row>
+				<Col span={12} offset={6}>
+					<div className="spaced-layout">
+						<h1>Transaction History</h1>
+						<Space align="horizontal">
+							<AccountName />
+							<Balance />
+						</Space>
+						<br />
+						<br />
+						Dates: <RangePicker onChange={onChange} />{" "}
+						<Button type="primary">Search</Button>
+						<br />
+						<br />
+						<Table columns={columns} dataSource={data} />
+					</div>
+				</Col>
+			</Row>
+		</>
 	);
 }
 
-export default TransactionHistory;
+const mapStateToProps = (state) => {
+	return {
+		userDetails: state.userDetails,
+	};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return bindActionCreators(
+		{
+			updateUserDetails: updateUserDetails,
+		},
+		dispatch
+	);
+};
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TransactionHistory));
