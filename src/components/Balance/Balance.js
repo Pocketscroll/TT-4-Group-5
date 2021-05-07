@@ -4,8 +4,8 @@ import React from "react";
 function Balance() {
 	return (
 		<Card style={{ width: 300 }}>
-			<h3>Account Balance:</h3>
-			<h4>S$400</h4>
+			<h5>Account Balance:</h5>
+			<h6>S$400</h6>
 		</Card>
 	);
 }

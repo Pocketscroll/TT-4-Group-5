@@ -1,4 +1,4 @@
-import { Button, DatePicker, Space, Table } from "antd";
+import { Button, DatePicker, Table } from "antd";
 import React from "react";
 import Balance from "../components/Balance/Balance";
 import "./TransactionHistory.css";
@@ -38,15 +38,17 @@ function TransactionHistory() {
 		},
 	];
 
+	function onChange(date, dateString) {
+		console.log(date, dateString);
+	}
+
 	return (
 		<div>
-			<Space>
-				<Balance />
-				Date Range:
-				<RangePicker />
-				<Button type="primary">Search</Button>
-				<Table columns={columns} dataSource={data} />
-			</Space>
+			<Balance />
+			Date:
+			<DatePicker onChange={onChange} />
+			<Button type="primary">Search</Button>
+			<Table columns={columns} dataSource={data} />
 		</div>
 	);
 }
