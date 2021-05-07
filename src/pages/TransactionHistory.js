@@ -1,11 +1,15 @@
 import { Button, Col, DatePicker, Row, Space, Table } from "antd";
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import { bindActionCreators } from "redux";
+import { updateUserDetails } from "../actions";
 import AccountName from "../components/TransactionHistoryCards/AccountName";
 import Balance from "../components/TransactionHistoryCards/Balance";
 import "./TransactionHistory.css";
 
 const { RangePicker } = DatePicker;
 
-function TransactionHistory() {
+function TransactionHistory(props) {
 	const columns = [
 		{
 			title: "Date",
@@ -70,6 +74,7 @@ function TransactionHistory() {
 
 	function onChange(date, dateString) {
 		console.log(date, dateString);
+		console.log("custID:", this.props.userDetails.custID);
 	}
 
 	return (
@@ -84,7 +89,7 @@ function TransactionHistory() {
 						</Space>
 						<br />
 						<br />
-						Date: <DatePicker onChange={onChange} />{" "}
+						Dates: <RangePicker onChange={onChange} />{" "}
 						<Button type="primary">Search</Button>
 						<br />
 						<br />
@@ -96,4 +101,18 @@ function TransactionHistory() {
 	);
 }
 
-export default TransactionHistory;
+const mapStateToProps = (state) => {
+	return {
+		userDetails: state.userDetails,
+	};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return bindActionCreators(
+		{
+			updateUserDetails: updateUserDetails,
+		},
+		dispatch
+	);
+};
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TransactionHistory));
