@@ -42,3 +42,42 @@
     transform: rotate(360deg);
   }
 }
+
+.main-container {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 200px; /* height of footer */
+}
+
+/* FOR Footer */
+#btm-footer-li {
+  float: left;
+  padding-left: 200px;
+  color: white;
+}
+#url-link {
+  color: white;
+}
+.btm-footer {
+  background-color: 484848;
+  width: 100%;
+  max-height: 100px;
+}
+.btm-footer-ol {
+  list-style-type: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#footer-li {
+  padding: 10px;
+}
+#footer-header {
+  color: #f0f8ff;
+  padding: 0px;
+  text-align: left;
+}
