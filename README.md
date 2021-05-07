@@ -1,3 +1,11 @@
+# To run this app on your dev server:
+
+Run the commands:
+
+### `npm install react`
+
+### `npm install antd`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

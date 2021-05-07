@@ -5,6 +5,7 @@ import Home from "./Home"
 import { Navbar } from "./Navbar";
 import Footer from "./Footer";
 
+import { Navbar } from "./components/NavBar/Navbar";
 
 function App() {
 	return (
