@@ -59,7 +59,7 @@ class Login extends React.Component {
             console.log("error")
 
             this.props.history.push({
-                pathname: '/dashboard',
+                pathname: '/account',
                 state: {
                     userData: content
             }})
@@ -78,7 +78,7 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.mock}>GOOO</button>
+                {/* <button onClick={this.mock}>GOOO</button> */}
                 <form className="Login-Form">
                     <h1 className="Title">Log In</h1>
                     <div className="Rectangle-58" />

@@ -1,18 +1,14 @@
 import React from "react"
 import { withRouter } from "react-router";
 
-class Dashboard extends React.Component {
+class MyAccount extends React.Component {
    
     render() {
         console.log(this.props.location.state.userData)
 
         const userData = this.props.location.state.userData
         return (
-            <div style={{marginTop:30}}>
-              
-
-
-                
+            <div style={{marginTop:100}}>
                 <div className="container emp-profile">
                     <form method="post">
                         <div className="row">
@@ -30,7 +26,7 @@ class Dashboard extends React.Component {
                                            
                                     <ul className="nav nav-tabs" id="myTab" role="tablist">
                                         <li className="nav-item">
-                                            <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                            <a className="nav-link active" id="home-tab">About</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -122,4 +118,4 @@ class Dashboard extends React.Component {
     }
 }
 
-export default withRouter(Dashboard)
+export default withRouter(MyAccount)

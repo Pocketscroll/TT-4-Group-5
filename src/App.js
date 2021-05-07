@@ -1,31 +1,33 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Navbar } from "./components/NavBar/Navbar";
-import Dashboard from "./pages/Dashboard";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom' 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import MyAccount from "./pages/MyAccount"
+import MakeATransaction from "./pages/MakeATransaction"
 
-function App() {
-	return (
-		<div className="main-container">
-			<Router>
-				<Route exact path="/">
-					<Navbar />
-					<Home />
-				</Route>
+import { Navbar } from "./components/NavBar/Navbar";
+export default function App() {
+    return (
+        <div className="main-container">
+            <Router>
+                <Route exact path="/">
+                    <Navbar/>
+                    <Home />
+                </Route>
+                <Route exact path="/login">
+                    <Navbar/>
+                    <Login/>
+                </Route>
+                <Route exact path="/account">
+                    <Navbar/>
+                    <MyAccount/>
+                </Route>
 
-				<Route exact path="/login">
-					<Navbar />
-					<Login />
-				</Route>
-
-				<Route exact path="/dashboard">
-					<Navbar />
-					<Dashboard />
-				</Route>
-			</Router>
-		</div>
-	);
-}
-
-export default App;
+				<Route exact path="/makeTransaction">
+                    <Navbar/>
+                    <MakeATransaction/>
+                </Route>
+            </Router>
+        </div>
+    );
+	}
