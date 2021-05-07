@@ -36,9 +36,9 @@ export const Navbar = () => {
 				<li className="nav-link">
 					<Link
 						className="navigation-link"
-						to={{ pathname: "/balance", state: { ...location.state } }}
+						to={{ pathname: "/account", state: { ...location.state } }}
 					>
-						Account Balance
+						My Account
 					</Link>
 				</li>
 				<li className="nav-link">
