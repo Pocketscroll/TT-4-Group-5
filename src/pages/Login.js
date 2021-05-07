@@ -3,6 +3,10 @@ import './Login.css';
 import { withRouter } from "react-router";
 
 
+import { updateUserDetails , logIn} from '../actions';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
+
 //import { Auth } from "aws-amplify";
 
 const url = "https://ipllrj2mq8.execute-api.ap-southeast-1.amazonaws.com/techtrek"
@@ -58,11 +62,16 @@ class Login extends React.Component {
             console.log(content)
             console.log("error")
 
+            this.props.updateUserDetails(content)
+
+            this.props.logIn(true)
+
             this.props.history.push({
                 pathname: '/dashboard',
                 state: {
                     userData: content
             }})
+
         }
     }
 
@@ -78,7 +87,6 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.mock}>GOOO</button>
                 <form className="Login-Form">
                     <h1 className="Title">Log In</h1>
                     <div className="Rectangle-58" />
@@ -123,5 +131,17 @@ class Login extends React.Component {
     }
 }
 
-
-export default withRouter(Login) 
+const mapStateToProps = state => {
+    return {
+      userDetails: state.userDetails,
+      loggedIn: state.loggedIn,
+    }
+  }
+  
+  const mapDispatchToProps = dispatch => {
+    return bindActionCreators({
+        updateUserDetails: updateUserDetails,
+        logIn: logIn
+    }, dispatch)
+  }
+  export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login));
