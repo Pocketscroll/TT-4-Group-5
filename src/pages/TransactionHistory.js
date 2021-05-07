@@ -1,5 +1,6 @@
-import { Button, Card, Col, DatePicker, Row, Space, Table } from "antd";
+import { Button, DatePicker, Space, Table } from "antd";
 import React from "react";
+import Balance from "../components/Balance/Balance";
 import "./TransactionHistory.css";
 
 const { RangePicker } = DatePicker;
@@ -40,19 +41,11 @@ function TransactionHistory() {
 	return (
 		<div>
 			<Space>
-				<div className="site-card-wrapper">
-					<Row gutter={16}>
-						<Col span={8}>
-							<Card title="Balance" bordered={false}>
-								S$12
-							</Card>
-						</Col>
-					</Row>
-					Date Range:
-					<RangePicker />
-					<Button type="primary">Search</Button>
-					<Table columns={columns} dataSource={data} />
-				</div>
+				<Balance />
+				Date Range:
+				<RangePicker />
+				<Button type="primary">Search</Button>
+				<Table columns={columns} dataSource={data} />
 			</Space>
 		</div>
 	);
