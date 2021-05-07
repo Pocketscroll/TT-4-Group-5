@@ -1,9 +1,14 @@
 import React from 'react';
-
 import { withRouter } from "react-router";
+
+
+
 import { updateUserDetails } from '../actions';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
+
+
+
 
 class MakeTransfer extends React.Component {
 
@@ -17,7 +22,8 @@ class MakeTransfer extends React.Component {
 
     render() {
 
-        console.log(this.props.userDetails)
+        console.log("custID:", this.props.userDetails.custID)
+        console.log("accountkey", this.props.userDetails.accountKey)
 
         return (
             <form className="Login-Form">
