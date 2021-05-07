@@ -9,7 +9,7 @@ def store_transaction(custID,payeeID,date,amount,database):
 
     if bool(database) == False:
         database[db_naming] = input_setup
-        
+
     if bool(database) == True:
         if date in database.keys():
             pass
@@ -18,4 +18,11 @@ def store_transaction(custID,payeeID,date,amount,database):
 
     return database
 
-store_transaction(custID,payeeID,date,amount,database)
+#Apply filter to retreive the range of date of interest
+def slice_transaction(from_date, till_date, database):
+    filtered_output = {}
+    query_range = list(range(from_date,till_date+1,1))
+    for key in database.keys():
+        if key in query_range:
+            filtered_output[key] = database[key]
+    return filtered_output
