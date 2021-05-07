@@ -1,22 +1,17 @@
 import React from 'react';
 import { withRouter } from "react-router";
 
-
-
 import { updateUserDetails } from '../actions';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-
-
-
 
 class MakeTransfer extends React.Component {
 
     constructor() {
         super()
         this.state = {
-            payeeID: 123,
-            amount: 99
+            payeeID: 0,
+            amount: 0
         }
     }
 
@@ -26,6 +21,13 @@ class MakeTransfer extends React.Component {
         console.log("accountkey", this.props.userDetails.accountKey)
 
         return (
+
+            <div>
+            {/* 
+            <div> {this.props.userDetails.custID}</div>
+
+            <div> {this.props.userDetails.accountKey}</div> */}
+
             <form className="Login-Form">
             <div className="Rectangle-58" />
             <h2 className="Email-Title">Payee ID</h2>
@@ -58,6 +60,8 @@ class MakeTransfer extends React.Component {
             </button>
            
         </form>
+
+        </div>
         )
     }
 }
