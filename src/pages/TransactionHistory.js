@@ -17,12 +17,25 @@ function TransactionHistory() {
 		{
 			title: "Date",
 			dataIndex: "date",
-			key: "date",
+			key: "date",    
+			onFilter: (value, record) => record.date.indexOf(value) === 0,
+			sorter: (a, b) => new Date(a.date) - new Date(b.date),
+			sortDirections: ['descend', 'ascend'],
 		},
 		{
 			title: "Amount",
 			dataIndex: "amount",
 			key: "amount",
+		},
+		{
+			title: "IsEGift",
+			dataIndex: "eGift",
+			value: "eGift",
+		},
+		{
+			title: "Message",
+			dataIndex: "message",
+			key: "message",
 		}
 	];
 
@@ -54,7 +67,7 @@ function TransactionHistory() {
 					Date Range:
 					<RangePicker />
 					<Button type="primary">Search</Button>
-					<Table columns={columns} dataSource={userInfo.transactions} />
+					<Table columns={columns} dataSource={userInfo.transactions.slice().sort((a, b) => b.date - a.date)} />
 				</div>
 			</Space>
 		</div>
