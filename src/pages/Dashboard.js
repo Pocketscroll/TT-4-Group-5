@@ -2,17 +2,19 @@ import React from "react"
 import { withRouter } from "react-router";
 
 class Dashboard extends React.Component {
+    
+
+
+
+
    
     render() {
         console.log(this.props.location.state.userData)
 
         const userData = this.props.location.state.userData
         return (
-            <div style={{marginTop:30}}>
-              
-
-
-                
+            <div style={{marginTop:30}}>            
+               
                 <div className="container emp-profile">
                     <form method="post">
                         <div className="row">

@@ -53,4 +53,3 @@ const ViewBalance = () => {
 };
 
 export default ViewBalance;
-        

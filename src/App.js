@@ -29,12 +29,16 @@ function App() {
 				<Route exact path="/dashboard">
 					<Dashboard />
 				</Route>
+
 				<Route exact path="/history">
 					<TransactionHistory />
 				</Route>
 
 				<Route exact path="/transfer">
 					<MakeTransfer />
+				</Route>
+				<Route exact path="/account">
+					<ViewBalance />
 				</Route>
 
 				<Footer />
