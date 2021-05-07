@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 
 import Login from "./pages/Login";
 import TransactionHistory from "./pages/TransactionHistory";
+import ViewBalance from "./ViewBalance";
 
 function App() {
 	return (
@@ -29,6 +30,12 @@ function App() {
 				<Route exact path="/history">
 					<TransactionHistory />
 				</Route>
+				<Route exact path="/account">
+					<ViewBalance/>
+				</Route>
+
+
+
 				<Footer />
 			</Router>
 		</div>
