@@ -28,17 +28,25 @@ export const Navbar = () => {
 				<li className="nav-link">
 					<Link
 						className="navigation-link"
-						to={{ pathname: "/", state: { ...location.state } }}
+						to={{ pathname: "/dashboard", state: { ...location.state } }}
 					>
-						HOME
+						Dashboard
 					</Link>
 				</li>
 				<li className="nav-link">
 					<Link
 						className="navigation-link"
-						to={{ pathname: "/dashboard", state: { ...location.state } }}
+						to={{ pathname: "/balance", state: { ...location.state } }}
 					>
-						Dashboard
+						Account Balance
+					</Link>
+				</li>
+				<li className="nav-link">
+					<Link
+						className="navigation-link"
+						to={{ pathname: "/transfer", state: { ...location.state } }}
+					>
+						Make a Transfer
 					</Link>
 				</li>
 
@@ -46,11 +54,11 @@ export const Navbar = () => {
 					<Link
 						className="navigation-link"
 						to={{
-							pathname: "/balance",
+							pathname: "/history",
 							state: { ...location.state },
 						}}
 					>
-						Account Balances
+						Transaction History
 					</Link>
 				</li>
 				{Object.keys(location.state).length === 0 ? (
