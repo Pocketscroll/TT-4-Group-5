@@ -10,6 +10,8 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import TransactionHistory from "./pages/TransactionHistory";
 
+import MakeTransfer from "./pages/MakeTransfer"
+
 function App() {
 	return (
 		<div className="main-container">
@@ -29,6 +31,11 @@ function App() {
 				<Route exact path="/history">
 					<TransactionHistory />
 				</Route>
+
+				<Route exact path="/transfer">
+					<MakeTransfer />
+				</Route>
+
 				<Footer />
 			</Router>
 		</div>
