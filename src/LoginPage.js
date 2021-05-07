@@ -1,5 +1,7 @@
 import React from 'react';
 import './LoginPage.css';
+import { withRouter } from "react-router";
+
 
 //import { Auth } from "aws-amplify";
 
@@ -48,19 +50,34 @@ class LoginPage extends React.Component {
 
 
         }else if(content.code == 403) {
-            alert("You have entered an incorrect email or password")
+            alert("You have entered an incorrect username or password")
         }
         else {
             // console.log(content.code)
             // alert(content.errorMessage);
-
+            console.log(content)
             console.log("error")
+
+            this.props.history.push({
+                pathname: '/about',
+                state: {
+                    userData: content
+            }})
         }
+    }
+
+    mock = () => {
+        this.props.history.push({
+            pathname: '/about',
+            state: {
+                userData: "hello"
+        }})
     }
     
     render() {
         return (
             <div>
+                <button onClick={this.mock}>GOOO</button>
                 <form className="Login-Form">
                     <h1 className="Title">Log In</h1>
                     <div className="Rectangle-58" />
@@ -106,4 +123,4 @@ class LoginPage extends React.Component {
 }
 
 
-export default LoginPage 
+export default withRouter(LoginPage) 
