@@ -1,5 +1,8 @@
-import { Table } from "antd";
+import { Button, Card, Col, DatePicker, Row, Space, Table } from "antd";
 import React from "react";
+import "./TransactionHistory.css";
+
+const { RangePicker } = DatePicker;
 
 function TransactionHistory() {
 	const columns = [
@@ -36,9 +39,21 @@ function TransactionHistory() {
 
 	return (
 		<div>
-			{/* <h3>Balance</h3> */}
-			{/* Search date range */}
-			<Table columns={columns} dataSource={data} />
+			<Space>
+				<div className="site-card-wrapper">
+					<Row gutter={16}>
+						<Col span={8}>
+							<Card title="Balance" bordered={false}>
+								S$12
+							</Card>
+						</Col>
+					</Row>
+					Date Range:
+					<RangePicker />
+					<Button type="primary">Search</Button>
+					<Table columns={columns} dataSource={data} />
+				</div>
+			</Space>
 		</div>
 	);
 }

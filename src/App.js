@@ -4,6 +4,7 @@ import { Navbar } from "./components/NavBar/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import TransactionHistory from "./pages/TransactionHistory";
 
 function App() {
 	return (
@@ -22,6 +23,10 @@ function App() {
 				<Route exact path="/dashboard">
 					<Navbar />
 					<Dashboard />
+				</Route>
+				<Route exact path="/history">
+					<Navbar />
+					<TransactionHistory />
 				</Route>
 			</Router>
 		</div>
